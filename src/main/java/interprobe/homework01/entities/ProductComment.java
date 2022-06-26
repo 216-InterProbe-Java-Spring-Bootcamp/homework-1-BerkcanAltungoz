@@ -1,0 +1,37 @@
+package interprobe.homework01.entities;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+import java.time.LocalDate;
+
+@Getter
+@Setter
+@Entity
+@Table(name = "product_comment")
+public class ProductComment {
+    @Id
+    @GeneratedValue(generator = "product_comment")
+    @SequenceGenerator(name = "product_comment", sequenceName = "PRODUCT_COMMENT_ID_SEQ")
+    private Long id;
+
+    @Column(name = "comment", length = 500, nullable = false)
+    private String comment;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "comment_date", nullable = false)
+    private LocalDate commentDate;
+
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "fk_product_id", nullable = false)
+    private Product fkProduct;
+
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "fk_user_id" , nullable = false)
+    private User fkUser;
+
+
+}

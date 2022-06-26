@@ -14,8 +14,8 @@ import java.time.LocalDate;
 @Table(name = "product")
 public class Product {
     @Id
-    @GeneratedValue(generator = "Product")
-    @SequenceGenerator(name = "Product", sequenceName = "PRODUCT_ID_SEQ")
+    @GeneratedValue(generator = "product")
+    @SequenceGenerator(name = "product", sequenceName = "PRODUCT_ID_SEQ")
     private Long id;
 
     @Column(name = "name", nullable = false)
