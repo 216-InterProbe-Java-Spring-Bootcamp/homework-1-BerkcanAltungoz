@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 
 @Getter
@@ -17,15 +18,16 @@ public class User {
     @SequenceGenerator(name = "User", sequenceName = "USER_ID_SEQ")
     private Long id;
 
-    @Column(name = "name", length = 50)
+    @Column(name = "name", length = 50, nullable = false)
     private String name;
 
-    @Column(name = "surname", length = 50)
+    @Column(name = "surname", length = 50, nullable = false)
     private String surname;
 
-    @Column(name = "email", length = 50)
+    @Email
+    @Column(name = "email", length = 50, nullable = false)
     private String email;
 
-    @Column(name = "surname", length = 15)
+    @Column(name = "surname", length = 15, nullable = false)
     private String phoneNumber;
 }
