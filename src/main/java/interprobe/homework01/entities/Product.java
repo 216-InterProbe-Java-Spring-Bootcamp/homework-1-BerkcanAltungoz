@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Positive;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -27,5 +28,5 @@ public class Product {
 
     @Temporal(TemporalType.DATE)
     @Column(name = "expire_date")
-    private LocalDate expireDate;
+    private Date expireDate;
 }

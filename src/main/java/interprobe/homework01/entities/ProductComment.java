@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -21,7 +22,7 @@ public class ProductComment {
 
     @Temporal(TemporalType.DATE)
     @Column(name = "comment_date", nullable = false)
-    private LocalDate commentDate;
+    private Date commentDate;
 
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

@@ -8,13 +8,14 @@ import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Transactional
 @Repository
 public interface ProductCommentDao extends JpaRepository<ProductComment, Long> {
     List<ProductComment> getAllByFkProductId(Long productId);
-    List<ProductComment> getAllByCommentDateBetween(LocalDate startDate, LocalDate endDate );
+    List<ProductComment> getAllByCommentDateBetween(Date startDate, Date endDate );
     List<ProductComment> getAllByFkUserId(Long userId);
-    List<ProductComment> getAllByFkUserIdAndCommentDateBetween(Long userId, LocalDate startDate, LocalDate endDate);
+    List<ProductComment> getAllByFkUserIdAndCommentDateBetween(Long userId, Date startDate, Date endDate);
 }

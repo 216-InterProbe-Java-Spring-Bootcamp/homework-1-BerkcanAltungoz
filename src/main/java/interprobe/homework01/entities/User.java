@@ -28,6 +28,6 @@ public class User {
     @Column(name = "email", length = 50, nullable = false)
     private String email;
 
-    @Column(name = "surname", length = 15, nullable = false)
+    @Column(name = "phoneNumber", length = 15, nullable = false)
     private String phoneNumber;
 }
