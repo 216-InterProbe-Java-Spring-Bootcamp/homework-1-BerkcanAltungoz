@@ -15,7 +15,7 @@ import java.util.List;
 @Repository
 public interface ProductCommentDao extends JpaRepository<ProductComment, Long> {
     List<ProductComment> getAllByFkProductId(Long productId);
-    List<ProductComment> getAllByCommentDateBetween(Date startDate, Date endDate );
+    List<ProductComment> getAllByFkProductIdAndCommentDateBetween(Long productId, Date startDate, Date endDate );
     List<ProductComment> getAllByFkUserId(Long userId);
     List<ProductComment> getAllByFkUserIdAndCommentDateBetween(Long userId, Date startDate, Date endDate);
 }
