@@ -25,12 +25,12 @@ public class ProductComment {
 
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "fk_product_id", nullable = false)
+    @JoinColumn(name = "fk_product_id", nullable = false, foreignKey = @ForeignKey(name = "fk_product_comment_product_id", value = ConstraintMode.CONSTRAINT))
     private Product fkProduct;
 
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "fk_user_id" , nullable = false)
+    @JoinColumn(name = "fk_user_id" , nullable = false , foreignKey = @ForeignKey(name = "fk_product_comment_user_id", value = ConstraintMode.CONSTRAINT))
     private User fkUser;
 
 
