@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Positive;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Getter
@@ -23,7 +24,7 @@ public class Product {
 
     @Positive
     @Column(name = "price", nullable = false)
-    private Integer price;
+    private BigDecimal price;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "expire_date")
